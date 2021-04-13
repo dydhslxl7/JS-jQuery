@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day2</title>
+    <script>
+        //문자형과 숫자형이 섞이면 문자형 데이터가 된다.
+        var t1 = "학교종이";
+        var t2 = " 땡땡땡 ";
+        var t3 = 8282;
+        var t4 = " 어서 모이자";
+        var result;
+
+        result = t1 + t2 + t3 + t4;
+        document.write(result);
+    </script>
+    <br>
+    <script>
+        //여러 개의 문자형 데이터로 저장된 HTML 태그를 출력하는 예제
+        var str = "<table border='1'>";
+        str += "<tr>";
+        str += "<td>1</td><td>2</td><td>3</td>";
+        str += "</tr>";
+        str += "</table>";
+        document.write( str );
+    </script>
+    <script>
+        //삼항연산자
+        var a = 10;
+        var b = 3;
+
+        var result = a > b ? "javascript" : "hello";
+        document.write(result);
+    </script>
+</head>
+<body>
+</body>
+</html>
