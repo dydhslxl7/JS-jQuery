@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        //함수 정의 두가지 방법
+
+        var count = 0;
+
+        myFnc();
+
+        function myFnc() {
+            count++;
+            document.write("hello" + count, "<br>");
+        } //호이스팅 방식 적용
+
+        myFnc(); //익명함수라면 작동안함 / 호이스팅 적용안됨
+
+        var theFnc = function() { //익명함수
+            count++;
+            document.write("bye" + count, "<br>");
+        }
+
+        theFnc();
+
+
+        var color = ["white", "yellow", "aqua", "purple"];
+
+        var i = 0;
+        function changeColor() {
+            i++;
+            if(i >= color.length) {
+                i = 0;
+            }
+
+            var bodyTag = document.getElementById("theBody");
+            bodyTag.style.backgroundColor = color[i];
+        }
+
+        //매개변수가 있는 함수 정의문
+        function myFnc2(name, area) {
+            document.write("안녕하세요. " + name + "입니다.", "<br>");
+            document.write("사는 곳은 " + area + "입니다.", "<br><br>");
+        }
+        
+        myFnc2("홍당무", "서울");
+
+        myFnc2("깍두기", "부산");
+        
+
+        var rightId = "korea";
+        var rightPw = "1234";
+        function login(id, pw) {
+            if(id == rightId) {
+                if(pw == rightPw) {
+                    document.write(id + "님 방문을 환영합니다.<br>");
+                }else {
+                    alert("잘못된 비밀번호입니다.");
+                }
+            }else {
+                alert("존재하지 않는 아이디입니다.");
+            }
+        }
+
+        var userId = prompt("아이디를 입력하세요.", "");
+        var userPw = prompt("패스워드를 입력하세요", "");
+
+        login(userId, userPw);
+
+
+        //매개변수 없이 함수에 전달된 값 받아오기 : arguments
+        function sum() {
+            var sum = arguments[0] + arguments[1] + arguments[2];
+            document.write(sum + "<br>");
+        }
+        sum(10, 20, 30);
+
+        function sum2() {
+            var sum = 0;
+            for(var i = 0; i < arguments.length; i++) {
+                sum += arguments[i];
+            }
+            document.write(sum + "<br>");
+        }
+        sum2(10, 20, 30);
+
+
+        //return
+        function testAvg(arrData) {
+            var sum = 0;
+            for(var i = 0; i < arrData.length; i++) {
+                sum += Number(prompt(arrData[i] + "점수는?", "0"));
+            }
+
+            var avg = sum / arrData.length;
+            return avg;
+        }
+
+        var arrSubject = ["국어", "수학"];
+        var result = testAvg(arrSubject);
+
+        document.write("평균 점수는 " + result + "점입니다.");
+
+
+        //재귀 함수 호출
+        var num = 0;
+        function testFnc() {
+            num++;
+            document.write(num, "<br>");
+            if(num == 10) return;
+
+            testFnc();
+        }
+        testFnc();
+    </script>
+</head>
+<body id="theBody">
+    <button onclick="changeColor();">배경색 바꾸기</button>
+</body>
+</html>
