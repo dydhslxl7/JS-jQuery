@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("h1.tit").css("background-color", "yellow").css("border", "2px solid red");
+        });
+
+        $(function(){
+            $("h2").next().css("color", "green");
+            $("h2").parent().css("border", "1px solid red");
+        });
+
+        $(function(){
+            $("#list_1").parent().css("border", "2px dashed red");
+        });
+    </script>
+</head>
+<body>
+    <h1 class="tit">제이쿼리</h1>
+    <h2>선택자</h2>
+    <h3 class="tit">직접 선택자</h3>
+
+    <div id="wrap">
+        <div id="inner_wrap">
+            <h1>제목1</h1>
+            <h2>제목2</h2>
+            <p>내용1</p>
+            <p>내용2</p>
+            <p>내용3</p>
+        </div>
+    </div>
+
+    <h1>인접 관계 선택자</h1>
+    <ul id="wrap">
+        <li>
+            <ul>
+                <li id="list_1">리스트 1-1</li>
+                <li>리스트 1-2</li>
+            </ul>
+        </li>
+        <li>리스트2</li>
+        <li>리스트3</li>
+    </ul>
+</body>
+</html>
